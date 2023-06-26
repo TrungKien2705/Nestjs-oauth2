@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './typeorm/entities/User';
 import { PassportModule } from '@nestjs/passport';
+import { UserModule } from './user/user.module';
 @Module({
   imports: [
     AuthModule,
@@ -21,6 +22,7 @@ import { PassportModule } from '@nestjs/passport';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    UserModule,
   ],
 })
 export class AppModule {}

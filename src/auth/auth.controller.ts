@@ -1,10 +1,10 @@
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { GoogleAuthGuard } from './utils/Guards';
 import { Request } from 'express';
 @Controller('auth')
 export class AuthController {
   @UseGuards(GoogleAuthGuard)
-  @Get('google/login')
+  @Post('google/login')
   handeLogin() {
     return {
       msg: 'Google oauth 2',
